@@ -17,3 +17,25 @@
   background-color:var(--background);
   display: flex;
 }
+
+.sidebar-container {
+  flex: 0.1;
+}
+
+.logo {
+  /* no fonts yet, so it looks ugly af */
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.nav-container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.main {
+  flex:0.9;
+}
