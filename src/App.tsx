@@ -7,7 +7,8 @@ import Markets from './components/Markets'
 
 const styles = {
   App:'w-full h-full bg-[#0A0B0E] flex',
-  siedbar_container:'flex-0.1'
+  siedbar_container:'flex-0.1',
+  main:'flex-0.9'
 }
 
 const  App = () => {
