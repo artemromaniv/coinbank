@@ -34,6 +34,24 @@
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+
+  background-color: var(--primary);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nav-link-active {
+  padding: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  background-color: var(--secondary--accent);
+}
+
+.nav-link-inactive {
+  padding: 1rem;
+  color: var(--secondary--accent);
 }
 
 .main {

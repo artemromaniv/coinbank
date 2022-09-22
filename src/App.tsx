@@ -5,10 +5,15 @@ import Sidebar from './components/Sidebar'
 import Exchanges from './components/Exchanges'
 import Markets from './components/Markets'
 
+const styles = {
+  App:'w-full h-full bg-[#0A0B0E] flex',
+  siedbar_container:'flex-0.1'
+}
+
 const  App = () => {
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <div className="sidebar-container">
         <Sidebar/>
       </div>

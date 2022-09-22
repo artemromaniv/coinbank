@@ -13,18 +13,18 @@ const Sidebar = () => {
       </div>
 
       <div className="nav-container">
-        <div className="">
-          <NavLink to={'/'}>
+        <div>
+          <NavLink to={'/'} className = {(isActive) => (isActive ? 'nav-link-active' : 'nav-link-inactive')} >
             Cryptocurrencies
           </NavLink>
         </div>
-        <div className="">
-          <NavLink to={'/exchanges'}>
+        <div>
+          <NavLink to={'/exchanges'} className = {(isActive) => (isActive ? 'nav-link-active' : 'nav-link-inactive')} >
             Exchanges
           </NavLink>
         </div>
-        <div className="">
-          <NavLink to={'/markets'}>
+        <div>
+          <NavLink to={'/markets'} className = {(isActive) => (isActive ? 'nav-link-active' : 'nav-link-inactive')} >
             Markets
           </NavLink>
         </div>
