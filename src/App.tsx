@@ -6,19 +6,19 @@ import Exchanges from './components/Exchanges'
 import Markets from './components/Markets'
 
 const styles = {
-  App:'w-full h-full bg-[#0A0B0E] flex',
-  siedbar_container:'flex-0.1',
-  main:'flex-0.9'
+  App:'w-full h-screen bg-[#0A0B0E] flex flex-row',
+  siedbar_container:'basis-1/8',
+  main:'basis-7/8'
 }
 
 const  App = () => {
 
   return (
     <div className={styles.App}>
-      <div className="sidebar-container">
+      <div className={styles.siedbar_container}>
         <Sidebar/>
       </div>
-      <div className="main">
+      <div className={styles.main}>
         <Routes>
           <Route path= '/' element = {<Cryptocurrencies/>} />
           <Route path= '/exchanges' element = {<Exchanges/>} />
