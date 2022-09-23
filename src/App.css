@@ -1,12 +1,5 @@
 * {
   margin: 0;
   padding: 0;
-  color:var(--text);
-  
-  --background:#0A0B0E;
-  --primary: #15181C;
-  --light--primary:#2E354A;
-  --accent:#6E56FD;
-  --secondary--accent:#F72585;
-  --text:#ffffff;
+  color: white;
 }
