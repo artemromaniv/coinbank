@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { curryGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { cryptoApi } from "../services/cryptoApi";
+
 export const store = configureStore({
     reducer:{
         // Add the generated reducer as a specific top-level slice
