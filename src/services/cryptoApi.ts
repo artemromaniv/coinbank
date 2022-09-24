@@ -4,7 +4,7 @@ const cryptoApiHeaders = {
     // When we bootstrap React App with create-react-app we use environment variables by typing: process.env,<VARIABLE_NAME>
     // but when we are using VIte build tool like in this project we do it with: import.meta.env.<VARIABLE_NAME>
     
-    'x-rapidapi-host': import.meta.env.VITE_CRYPTO_RAPIDAPI_HOST ='coinranking1.p.rapidapi.com'
+    'x-rapidapi-host': import.meta.env.VITE_CRYPTO_RAPIDAPI_HOST
     ,
     'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY,
   };
@@ -26,8 +26,8 @@ export const cryptoApi = createApi({
         }),
         getExchanges:builder.query({
             query:() => createRequest(`/exchanges`)
-        })
-    })
+        }),
+    }),
 })
 
 export const {
