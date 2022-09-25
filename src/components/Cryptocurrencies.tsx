@@ -3,8 +3,9 @@ import { useGetCryptoCurrencyQuery } from '../services/cryptoApi'
 
 const styles = {
   wrapper:'w-full h-full flex flex-row',
-  table_container:'basis-3/5',
-  banner_container:'basis-2/5'
+  table_container:'basis-3/5 overflow-y-auto',
+  banner_container:'basis-2/5',
+  table:'min-w-full text-sm divide-y-2 divide-gray-200'
 }
 
 interface Stats {
@@ -20,6 +21,7 @@ interface Currencies {
   name:string,
   symbol:string,
   iconUrl:string,
+  marketCap:string,
   price:string,
   rank:number,
   change:string
@@ -41,9 +43,31 @@ const Cryptocurrencies = () => {
         : isLoading ? (<h1>I'm loading</h1>) : (
           <div className={styles.wrapper} >
             <div className={styles.table_container}>
-              {currencies?.map((coin:any) => (
-                <h1 key = {coin.uuid}>{coin.name}</h1>
-              ))}
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {currencies?.map((coin:any) => (
+                    <tr key = {coin.uuid}>
+                      <td>{coin.rank}</td>
+                      <td>{coin.name}</td>
+                      {/* <td>
+                        <img src={coin.iconUrl}></img>
+                      </td> */}
+                      <td>{coin.symbol}</td>
+                      <td>{coin.price}</td>
+                      <td>{coin.marketCap}</td>
+                      <td>{coin.change}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
             </div>
             <div className={styles.banner_container}>
               <h1>{stats?.totalCoins}</h1>
