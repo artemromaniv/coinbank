@@ -4,8 +4,13 @@ import { useGetCryptoCurrencyQuery } from '../services/cryptoApi'
 const styles = {
   wrapper:'w-full h-full flex flex-row',
   table_container:'basis-3/5 overflow-y-auto',
+  table:'min-w-full text-sm  ',
+  table_head:'px-4 py-2 font-medium text-left text-white whitespace-nowrap',
+  table_body:'divide-gray-200"',
+  table_icon:'px-4 py-2 text-white whitespace-nowrap w-4 h-4',
+  table_div:'px-4 py-2 text-white whitespace-nowrap',
   banner_container:'basis-2/5',
-  table:'min-w-full text-sm divide-y-2 divide-gray-200'
+
 }
 
 interface Stats {
@@ -43,26 +48,30 @@ const Cryptocurrencies = () => {
         : isLoading ? (<h1>I'm loading</h1>) : (
           <div className={styles.wrapper} >
             <div className={styles.table_container}>
-              <table>
+              <table className={styles.table}>
                 <thead>
-                  <tr>
-                    <th>
-
-                    </th>
+                  <tr className='items-center'>
+                    <th className={styles.table_head} >#</th>
+                    <th className={styles.table_head} >icon</th>
+                    <th className={styles.table_head}>Name</th>
+                    <th className={styles.table_head}>Symbol</th>
+                    <th className={styles.table_head}>Price</th>
+                    <th className={styles.table_head}>Market Cap</th>
+                    <th className={styles.table_head}>Change</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className={styles.table_body} >
                   {currencies?.map((coin:any) => (
                     <tr key = {coin.uuid}>
-                      <td>{coin.rank}</td>
-                      <td>{coin.name}</td>
-                      {/* <td>
-                        <img src={coin.iconUrl}></img>
-                      </td> */}
-                      <td>{coin.symbol}</td>
-                      <td>{coin.price}</td>
-                      <td>{coin.marketCap}</td>
-                      <td>{coin.change}</td>
+                        <td className={styles.table_div} >{coin.rank}</td>
+                        <td className={styles.table_icon}>
+                          <img src={coin.iconUrl}></img>
+                        </td>
+                        <td className={styles.table_div} >{coin.name}</td>
+                        <td className={styles.table_div} >{coin.symbol}</td>
+                        <td className={styles.table_div} >{coin.price}</td>
+                        <td className={styles.table_div} >{coin.marketCap}</td>
+                        <td className={styles.table_div} >{coin.change}</td>
                     </tr>
                   ))}
                 </tbody>

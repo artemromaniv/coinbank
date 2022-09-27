@@ -6,8 +6,8 @@ const styles = {
   logo:'text-4xl',
   nav_container:'m-0 absolute top-1/2 -translate-y-1/2  ',
   nav:'flex flex-col gap-14 bg-[#15181C] px-4 py-14 rounded-r-3xl',
-  nav_link_active:'flex p-2 bg-gradient-to-br from-[#F72585] to-[#2E354A] rounded-md ',
-  nav_link_inactive:'flex p-2 bg-gradient-to-br from-[#6E56FD] to-[#2E354A] rounded-md'
+  nav_link_active:'text-white flex p-2 bg-gradient-to-br from-[#F72585] to-[#2E354A] rounded-md ',
+  nav_link_inactive:'text-white flex p-2 bg-gradient-to-br from-[#6E56FD] to-[#2E354A] rounded-md'
 }
 
 const links = [
