@@ -2,4 +2,19 @@
   margin: 0;
   padding: 0;
   color: white;
+  scrollbar-width: 3px;
+  scrollbar-color: #6E56FD #000000;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #6E56FD;
+  border-radius: 10px;
 }
