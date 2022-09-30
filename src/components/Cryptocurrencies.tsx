@@ -2,7 +2,7 @@ import {useState,useEffect} from 'react'
 import { useGetCryptoCurrencyQuery } from '../services/cryptoApi'
 
 const styles = {
-  wrapper:'w-full h-full flex flex-row',
+  wrapper:'w-full h-full flex flex-col lg:flex-row md:flex-col',
   table_container:'basis-3/5 overflow-y-auto',
   table:'min-w-full text-sm  ',
   table_head:'px-4 py-2 font-medium text-left text-white whitespace-nowrap',
