@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { IconArrowsExchange,Icon3dCubeSphere, IconBuildingBank } from "@tabler/icons"
 const styles = {
-  logo_container:'p-5',
+  logo_container:'absolute p-5',
   logo:'text-4xl',
   nav_container:'m-0 absolute top-1/2 -translate-y-1/2  ',
   nav:'flex flex-col gap-14 bg-[#15181C] px-4 py-14 rounded-r-3xl',

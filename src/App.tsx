@@ -7,8 +7,8 @@ import Markets from './components/Markets'
 
 const styles = {
   App:'w-full h-screen bg-[#0A0B0E] flex flex-row overflow-hidden',
-  siedbar_container:'basis-1/8',
-  main:'basis-7/8 w-full'
+  siedbar_container:'lg:basis-1/12 hidden lg:flex',
+  main:'lg:basis-11/12 w-full lg:pt-20'
 }
 
 const  App = () => {
