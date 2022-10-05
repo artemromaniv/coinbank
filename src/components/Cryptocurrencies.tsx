@@ -1,3 +1,4 @@
+import millify from 'millify'
 import {useState,useEffect} from 'react'
 import { useGetCryptoCurrencyQuery } from '../services/cryptoApi'
 
@@ -5,12 +6,14 @@ const styles = {
   wrapper:'w-full h-full flex flex-col-reverse lg:flex-row md:flex-col-reverse ',
   table_container:'lg:basis-3/5 overflow-y-auto ',
   table_head:'flex flex-row',
-  table_left_cols:'basis-1/2 inline-grid grid-cols-4 items-center',
-  table_right_cols:'basis-1/2 inline-grid grid-cols-3 items-center',
+  table_left_cols:'basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center',
+  table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
   table_body:'bg-gray-900 mt-4 rounded-2xl p-2',
   table_row:'flex flex-row w-full',
-  coin_icon:'w-8 h-8',
+  coin_icon:'col-span-1 w-8 h-auto rounded-full',
   banner_container:'lg:basis-2/5',
+
+  media_util:'invisible md:visible'
 
 }
 
@@ -46,7 +49,7 @@ const Cryptocurrencies = () => {
 
   return (
       <>
-        {error ? (<h1>Something is horribly wrong </h1>) 
+        {error ? (<h1>Couldn't receive data,please check your internet connection</h1>) 
         : isLoading ? (<h1>I'm loading</h1>) : (
           <div className={styles.wrapper} >
             <div className={styles.table_container}>
@@ -55,12 +58,12 @@ const Cryptocurrencies = () => {
                   <li className={styles.table_left_cols}>
                     <span>#</span>
                     <span>{' '}</span>
-                    <span>Name</span>
+                    <span className={styles.media_util} >Name</span>
                     <span>{''}</span>
                   </li>
                   <li className = {styles.table_right_cols}>
-                    <span>Price</span>
-                    <span>Market Cap</span>
+                    <span>Price(USD)</span>
+                    <span className={styles.media_util} >Market Cap</span>
                     <span>Change</span>
                   </li>
                 </ul>
@@ -71,13 +74,13 @@ const Cryptocurrencies = () => {
                     <li className={styles.table_left_cols}>
                       <span>{coin.rank}.</span>
                       <img src={coin.iconUrl} alt={coin.symbol} className = {styles.coin_icon} />
-                      <span>{coin.name}</span>
+                      <span className={styles.media_util} >{coin.name }</span>
                       <span>{coin.symbol}</span>
                     </li>
                     <li className={styles.table_right_cols} >
-                      <span>{coin.price}</span>
-                      <span>{coin.marketCap}</span>
-                      <span>{coin.change}</span>
+                      <span>{millify(parseFloat(coin.price))}</span>
+                      <span className={styles.media_util} >{millify(parseFloat(coin.marketCap))}</span>
+                      <span className={parseFloat(coin.change) < 0 ? 'text-rose-800' : 'text-green-500'} >{coin.change}</span>
                     </li>
                   </ul>
                 </div>
