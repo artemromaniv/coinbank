@@ -18,13 +18,13 @@ const styles = {
 }
 
 
-interface Stats {
-  totalCoins:number,
-  totalMarkets:number,
-  totalExchanges:number,
-  totalMarketCap:string,
-  total24hVolume:string
-}
+// interface Stats {
+//   totalCoins:number,
+//   totalMarkets:number,
+//   totalExchanges:number,
+//   totalMarketCap:string,
+//   total24hVolume:string
+// }
 
 interface Currencies {
   uuid:string,
@@ -39,12 +39,12 @@ interface Currencies {
 
 const Cryptocurrencies = () => {
   const [currencies,setCurrencies] = useState<Currencies[]>()
-  const [stats,setStats] = useState<Stats>()
-  const {data,error,isLoading} = useGetCryptoCurrencyQuery(50)
+  // const [stats,setStats] = useState<Stats>()
+  const {data,error,isLoading} = useGetCryptoCurrencyQuery(100)
   
   useEffect(()=> {
     setCurrencies(data?.data?.coins)
-    setStats(data?.data?.stats)
+    // setStats(data?.data?.stats)
   },[data])
 
   return (
@@ -87,11 +87,11 @@ const Cryptocurrencies = () => {
               ))}
             </div>
             <div className={styles.banner_container}>
-              <h1>{stats?.totalCoins}</h1>
+              {/* <h1>{stats?.totalCoins}</h1>
               <h1>{stats?.totalMarkets}</h1>
               <h1>{stats?.totalExchanges}</h1>
               <h1>{stats?.totalMarketCap}</h1>
-              <h1>{stats?.total24hVolume}</h1>
+              <h1>{stats?.total24hVolume}</h1> */}
             </div>
           </div>
           )
