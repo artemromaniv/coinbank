@@ -1,20 +1,19 @@
 import millify from 'millify'
 import {useState,useEffect} from 'react'
 import { useGetCryptoCurrencyQuery } from '../services/cryptoApi'
-
+import GlobalStats from './GlobalStats'
 const styles = {
   wrapper:'w-full h-full flex flex-col-reverse lg:flex-row md:flex-col-reverse ',
-  table_container:'lg:basis-3/5 overflow-y-auto ',
+  table_container:'lg:basis-8/12 overflow-y-auto ',
   table_head:'flex flex-row',
   table_left_cols:'basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center',
   table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
   table_body:'bg-gray-900 mt-4 rounded-2xl p-2',
   table_row:'flex flex-row w-full',
   coin_icon:'col-span-1 w-8 h-auto rounded-full',
-  banner_container:'lg:basis-2/5',
-
+  banner_container:'lg:basis-4/12',
+  banner_header:'text-3xl font-bold',
   media_util:'invisible md:visible'
-
 }
 
 
@@ -31,10 +30,10 @@ interface Currencies {
   name:string,
   symbol:string,
   iconUrl:string,
-  marketCap:string,
-  price:string,
+  marketCap:number,
+  price:number,
   rank:number,
-  change:string
+  change:number
 }
 
 const Cryptocurrencies = () => {
@@ -50,7 +49,7 @@ const Cryptocurrencies = () => {
   return (
       <>
         {error ? (<h1>Couldn't receive data,please check your internet connection</h1>) 
-        : isLoading ? (<h1>I'm loading</h1>) : (
+        : isLoading ? (<h1>Loading coins data</h1>) : (
           <div className={styles.wrapper} >
             <div className={styles.table_container}>
               <div className='p-2'>
@@ -78,15 +77,17 @@ const Cryptocurrencies = () => {
                       <span>{coin.symbol}</span>
                     </li>
                     <li className={styles.table_right_cols} >
-                      <span>{millify(parseFloat(coin.price))}</span>
-                      <span className={styles.media_util} >{millify(parseFloat(coin.marketCap))}</span>
-                      <span className={parseFloat(coin.change) < 0 ? 'text-rose-800' : 'text-green-500'} >{coin.change}</span>
+                      <span>{millify(coin.price)}</span>
+                      <span className={styles.media_util} >{millify(coin.marketCap)}</span>
+                      <span className={coin.change < 0 ? 'text-rose-800' : 'text-green-500'} >{coin.change}</span>
                     </li>
                   </ul>
                 </div>
               ))}
             </div>
             <div className={styles.banner_container}>
+              <h1 className={styles.banner_header} >Cryptocurrencies</h1>
+              <GlobalStats/>
               {/* <h1>{stats?.totalCoins}</h1>
               <h1>{stats?.totalMarkets}</h1>
               <h1>{stats?.totalExchanges}</h1>
