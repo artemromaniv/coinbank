@@ -18,3 +18,11 @@
   background-color: #6E56FD;
   border-radius: 10px;
 }
+
+
+.background {
+  background-color:#08080D;
+background-image:
+radial-gradient(at 0% 0%, #11111B 0px, transparent 50%),
+radial-gradient(at 30% 29%, #11111B 0px, transparent 50%);
+}

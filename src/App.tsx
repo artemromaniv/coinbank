@@ -6,7 +6,7 @@ import Exchanges from './components/Exchanges'
 import Markets from './components/Markets'
 
 const styles = {
-  App:'w-full h-screen bg-[#0A0B0E] flex flex-row overflow-hidden',
+  App:'w-full h-screen background flex flex-row overflow-hidden',
   siedbar_container:'lg:basis-1/12 hidden lg:flex',
   main:'lg:basis-11/12 w-full lg:pt-20'
 }
