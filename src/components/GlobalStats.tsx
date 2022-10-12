@@ -18,7 +18,8 @@ interface NewCoinType {
 const styles = {
     wrapper:'px-3',
     banner_header:'text-3xl font-bold',
-    vertical_align:'flex flex-col gap-4',
+    stats_card:'flex flex-col gap-4 bg-gray-900 p-3 rounded-2xl',
+    new_coin_card:'flex items-center gap-6 pl-8 py-3 bg-gray-900 rounded-2xl',
     coin_icon:'col-span-1 w-8 h-auto ',
     coin_icon_container:'bg-white flex w-10 h-10 rounded-full items-center justify-center overflow-hidden',
 }
@@ -42,27 +43,27 @@ const GlobalStats = () => {
     <div className={styles.wrapper}>
         <h1 className={styles.banner_header} >Cryptocurrencies</h1>
         <div className="mt-9 mb-9 grid grid-cols-2 gap-4 text-xl">
-            <div className = {`${styles.vertical_align} `}>
+            <div className = {`${styles.stats_card} `}>
                 <span>Total coins</span>
                 <span>{stats?.totalCoins}</span>               
             </div> 
-            <div className = {`${styles.vertical_align}`}>
+            <div className = {`${styles.stats_card}`}>
                 <span>Total Markets</span>
                 <span>{stats?.totalMarkets}</span>               
             </div>
-            <div className = {`${styles.vertical_align} col-span-2`} >
+            <div className = {`${styles.stats_card} col-span-2`} >
                 <span>Total market cap</span>
                 <span>{stats?.totalMarketCap}</span>
             </div>
-            <div className = {`${styles.vertical_align} col-span-2`} >
+            <div className = {`${styles.stats_card} col-span-2`} >
                 <span>Total 24h volume</span>
                 <span>{stats?.total24hVolume}</span> 
             </div>
         </div>
         <span className="font-bold text-2xl" >Newest coins</span>
-        <div className="mt-9 grid grid-cols-1">
+        <div className="mt-9 grid grid-cols-1 gap-8">
             {newestCoins?.map((newCoin) => (
-                <div key={newCoin.uuid} className = 'flex items-center gap-6'>
+                <div key={newCoin.uuid} className = {styles.new_coin_card}>
                     <div className={styles.coin_icon_container} >
                         <img className={styles.coin_icon} src={newCoin.iconUrl} alt="" />
                     </div>
