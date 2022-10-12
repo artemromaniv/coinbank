@@ -10,7 +10,8 @@ const styles = {
   table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
   table_body:'bg-gray-900 mt-4 rounded-2xl p-2',
   table_row:'flex flex-row w-full',
-  coin_icon:'col-span-1 w-8 h-auto rounded-full',
+  coin_icon:'col-span-1 w-8 h-auto ',
+  coin_icon_container:'bg-white flex w-10 h-10 rounded-full items-center justify-center overflow-hidden',
   banner_container:'lg:basis-4/12',
   banner_header:'text-3xl font-bold',
   media_util:'invisible md:visible'
@@ -72,7 +73,9 @@ const Cryptocurrencies = () => {
                   <ul className={styles.table_row}>
                     <li className={styles.table_left_cols}>
                       <span>{coin.rank}.</span>
-                      <img src={coin.iconUrl} alt={coin.symbol} className = {styles.coin_icon} />
+                      <div className={styles.coin_icon_container} >
+                        <img src={coin.iconUrl} alt={coin.symbol} className = {styles.coin_icon} />
+                      </div>
                       <span className={styles.media_util} >{coin.name }</span>
                       <span>{coin.symbol}</span>
                     </li>

@@ -10,7 +10,7 @@ interface StatsType {
 
 const styles = {
     wrapper:' mt-9 px-3',
-    vertical_align:'flex flex-col'
+    vertical_align:'flex flex-col gap-4'
 }
 
 const GlobalStats = () => {
@@ -26,12 +26,12 @@ const GlobalStats = () => {
 
   return (
     <div className={styles.wrapper}>
-        <div className="grid grid-cols-2 gap-4">
-            <div className={styles.vertical_align}>
+        <div className="grid grid-cols-2 gap-4 text-xl">
+            <div className = {`${styles.vertical_align} `}>
                 <span>Total coins</span>
                 <span>{stats?.totalCoins}</span>               
             </div> 
-            <div className={styles.vertical_align}>
+            <div className = {`${styles.vertical_align}`}>
                 <span>Total Markets</span>
                 <span>{stats?.totalMarkets}</span>               
             </div>
