@@ -8,12 +8,12 @@ const styles = {
   table_head:'flex flex-row',
   table_left_cols:'basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center',
   table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
-  table_body:'bg-gray-900 mt-4 rounded-2xl p-2',
+  table_body:'bg-crust mt-4 rounded-2xl p-2',
   table_row:'flex flex-row w-full',
   coin_icon:'col-span-1 w-8 h-auto ',
   coin_icon_container:'bg-white flex w-10 h-10 rounded-full items-center justify-center overflow-hidden',
-  banner_container:'lg:basis-4/12',
-  media_util:'invisible md:visible'
+  banner_container:'hidden lg:basis-4/12 lg:inline',
+  media_util:'hidden md:inline'
 }
 
 
@@ -81,7 +81,7 @@ const Cryptocurrencies = () => {
                     <li className={styles.table_right_cols} >
                       <span>{millify(coin.price)}</span>
                       <span className={styles.media_util} >{millify(coin.marketCap)}</span>
-                      <span className={coin.change < 0 ? 'text-rose-800' : 'text-green-500'} >{coin.change}</span>
+                      <span className={coin.change < 0 ? 'text-red' : 'text-green'} >{coin.change}</span>
                     </li>
                   </ul>
                 </div>
