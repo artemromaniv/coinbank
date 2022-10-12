@@ -13,7 +13,6 @@ const styles = {
   coin_icon:'col-span-1 w-8 h-auto ',
   coin_icon_container:'bg-white flex w-10 h-10 rounded-full items-center justify-center overflow-hidden',
   banner_container:'lg:basis-4/12',
-  banner_header:'text-3xl font-bold',
   media_util:'invisible md:visible'
 }
 
@@ -89,7 +88,6 @@ const Cryptocurrencies = () => {
               ))}
             </div>
             <div className={styles.banner_container}>
-              <h1 className={styles.banner_header} >Cryptocurrencies</h1>
               <GlobalStats/>
               {/* <h1>{stats?.totalCoins}</h1>
               <h1>{stats?.totalMarkets}</h1>
