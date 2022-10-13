@@ -7,10 +7,10 @@ const styles  = {
     table_head:'flex flex-row',
     table_left_cols:'basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center',
     table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
-    table_body:'bg-crust mt-4 rounded-2xl p-2',
+    table_body:'border-b-2 border-b-crust p-2 py-3',
     table_row:'flex flex-row w-full',
-    exchange_icon:'col-span-1 w-8 h-auto ',
-    exchange_icon_container:'bg-white flex w-10 h-10 rounded-full items-center justify-center overflow-hidden',
+    exchange_icon:'col-span-1 w-6 h-auto ',
+    exchange_icon_container:'bg-white flex w-8 h-8 rounded-full items-center justify-center overflow-hidden',
     media_util:'hidden md:inline'
 }
 

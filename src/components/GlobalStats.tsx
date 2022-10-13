@@ -43,11 +43,11 @@ const GlobalStats = () => {
     <div className={styles.wrapper}>
         <h1 className={styles.banner_header} >Cryptocurrencies</h1>
         <div className="mt-9 mb-9 grid grid-cols-2 gap-4 text-xl font-bold text-txt">
-            <div className = {`${styles.stats_card} text-2xl`}>
+            <div className = {`${styles.stats_card}`}>
                 <span>Total coins</span>
                 <span>{stats?.totalCoins}</span>               
             </div> 
-            <div className = {`${styles.stats_card} text-2xl`}>
+            <div className = {`${styles.stats_card}`}>
                 <span>Total Markets</span>
                 <span>{stats?.totalMarkets}</span>               
             </div>

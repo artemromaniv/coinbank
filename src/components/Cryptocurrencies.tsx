@@ -8,10 +8,10 @@ const styles = {
   table_head:'flex flex-row',
   table_left_cols:'basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center',
   table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
-  table_body:'bg-crust mt-4 rounded-2xl p-2',
+  table_body:'hover:bg-crust border-b-2 border-b-crust p-2 py-3',
   table_row:'flex flex-row w-full',
-  coin_icon:'col-span-1 w-8 h-auto ',
-  coin_icon_container:'bg-white flex w-10 h-10 rounded-full items-center justify-center overflow-hidden',
+  coin_icon:'col-span-1 w-6 h-auto ',
+  coin_icon_container:'bg-white flex w-8 h-8 rounded-full items-center justify-center overflow-hidden',
   banner_container:'hidden lg:basis-4/12 lg:inline',
   media_util:'hidden md:inline'
 }
@@ -42,8 +42,7 @@ const Cryptocurrencies = () => {
   const {data,error,isLoading} = useGetCryptoCurrencyQuery(100)
   
   useEffect(()=> {
-    setCurrencies(data?.data?.coins)
-    // setStats(data?.data?.stats)
+    setCurrencies(data?.data?.coins)    
   },[data])
 
   return (
