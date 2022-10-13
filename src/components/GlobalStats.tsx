@@ -26,17 +26,13 @@ const styles = {
 
 const GlobalStats = () => {
 
-    const {data, isLoading, error} = useGetGlobalStatsQuery(undefined,{})
+    const {data} = useGetGlobalStatsQuery(undefined,{})
     const [stats,setStats] = useState<StatsType>()
     const [newestCoins,setNewestCoins] = useState<NewCoinType[]>()
 
     useEffect(() => {
         setStats(data?.data)
         setNewestCoins(data?.data.newestCoins)
-        console.log(stats);
-        console.log(newestCoins);
-        
-        
     },[data])
 
   return (
