@@ -25,11 +25,17 @@ interface ExchangesData {
   numberOfMarkets:number,
 }
 
+interface Stats {
+  total:number
+}
+
 const Exchanges = () => {
   const [exchanges,setExchanges] = useState<ExchangesData[]>([])
+  const [stats,setStats] = useState<Stats>()
   const {data,isLoading,error} = useGetExchangesQuery(undefined,{})
   useEffect(() => {
     setExchanges(data?.data?.exchanges)
+    setStats(data?.data?.stats)
   },[data])
 
   return (
@@ -47,7 +53,6 @@ const Exchanges = () => {
                   <span>{''}</span>
                 </li>
                 <li className = {styles.table_right_cols}>
-                  <span>Markets</span>
                   <span className={styles.media_util} >Markets</span>
                   <span>Recommended</span>
                 </li>
@@ -65,7 +70,6 @@ const Exchanges = () => {
                     <span></span>
                   </li>
                   <li className={styles.table_right_cols}>
-                    <span></span>
                     <span>{exchange.numberOfMarkets}</span>
                     <span>{exchange.recommended ? 'yes' : 'nope'}</span>
                   </li>
@@ -74,7 +78,7 @@ const Exchanges = () => {
             ))}
           </div>
           <div className={styles.banner_container} >
-            <CoinSupply/>
+            <CoinSupply totalBTCMarkets={stats?.total} />
           </div>
       </div>)}
     </>
