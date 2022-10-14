@@ -35,6 +35,9 @@ export const cryptoApi = createApi({
         }),
         getCoinSupply:builder.query({
             query:() => createRequest(`/coin/Qwsogvtv82FCd/supply`)
+        }),
+        getCoinMarketQuery:builder.query({
+            query:() => createRequest(`coin/Qwsogvtv82FCd/markets`)
         })
     }),
 })
