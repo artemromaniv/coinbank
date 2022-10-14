@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useGetGlobalStatsQuery } from "../services/cryptoApi"
+import StatsBanner from './StatsBanner'
 
 interface StatsType {
     totalCoins:number,
@@ -38,24 +39,16 @@ const GlobalStats = () => {
   return (
     <div className={styles.wrapper}>
         <h1 className={styles.banner_header} >Cryptocurrencies</h1>
-        <div className="mt-9 mb-9 grid grid-cols-2 gap-4 text-xl font-bold text-txt">
-            <div className = {`${styles.stats_card}`}>
-                <span>Total coins</span>
-                <span>{stats?.totalCoins}</span>               
-            </div> 
-            <div className = {`${styles.stats_card}`}>
-                <span>Total Markets</span>
-                <span>{stats?.totalMarkets}</span>               
-            </div>
-            <div className = {`${styles.stats_card} col-span-2`} >
-                <span>Total market cap</span>
-                <span>{stats?.totalMarketCap}</span>
-            </div>
-            <div className = {`${styles.stats_card} col-span-2`} >
-                <span>Total 24h volume</span>
-                <span>{stats?.total24hVolume}</span> 
-            </div>
-        </div>
+        <StatsBanner 
+            left_top_header = 'Total coins'
+            left_top_content = {stats?.totalCoins}
+            right_top_header = 'Total markets'
+            right_top_content = {stats?.totalMarkets}
+            top_row_header = 'Total Market cap'
+            top_row_content = {stats?.totalMarketCap}
+            btm_row_header = 'Total 24h volume'
+            btm_row_content={stats?.total24hVolume}
+        />
         <span className="font-bold text-2xl" >Newest coins</span>
         <div className="mt-9 grid grid-cols-1 gap-8 font-bold text-txt">
             {newestCoins?.map((newCoin) => (
