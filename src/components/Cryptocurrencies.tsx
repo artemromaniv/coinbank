@@ -16,15 +16,6 @@ const styles = {
   media_util:'hidden md:inline'
 }
 
-
-// interface Stats {
-//   totalCoins:number,
-//   totalMarkets:number,
-//   totalExchanges:number,
-//   totalMarketCap:string,
-//   total24hVolume:string
-// }
-
 interface Currencies {
   uuid:string,
   name:string,
@@ -88,11 +79,6 @@ const Cryptocurrencies = () => {
             </div>
             <div className={styles.banner_container}>
               <GlobalStats/>
-              {/* <h1>{stats?.totalCoins}</h1>
-              <h1>{stats?.totalMarkets}</h1>
-              <h1>{stats?.totalExchanges}</h1>
-              <h1>{stats?.totalMarketCap}</h1>
-              <h1>{stats?.total24hVolume}</h1> */}
             </div>
           </div>
           )
