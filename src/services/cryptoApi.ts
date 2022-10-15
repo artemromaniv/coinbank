@@ -27,7 +27,9 @@ export const cryptoApi = createApi({
         getCryptoHistory: builder.query({
             query:({coinId,timeperiod}) => createRequest(`coin/${coinId}/history?timeperiod=${timeperiod}`)
         }),
-        getExchanges:builder.query({
+        //for some reason markets and exchanges are swaped by places in the API i fetch data from,so little confusions in the code are NOT MY fault,
+        //but i did my best to keep code clean and understandable
+        getCoinMarkets:builder.query({
             query:() => createRequest(`/coin/Qwsogvtv82FCd/exchanges`)
         }),
         getGlobalStats:builder.query({
@@ -36,7 +38,7 @@ export const cryptoApi = createApi({
         getCoinSupply:builder.query({
             query:() => createRequest(`/coin/Qwsogvtv82FCd/supply`)
         }),
-        getCoinMarket:builder.query({
+        getCoinExchanges:builder.query({
             query:() => createRequest(`coin/Qwsogvtv82FCd/markets`)
         })
     }),
@@ -46,8 +48,8 @@ export const {
     useGetCryptoCurrencyQuery,
     useGetCryptoDetailsQuery,
     useGetCryptoHistoryQuery,
-    useGetExchangesQuery,
+    useGetCoinExchangesQuery,
     useGetGlobalStatsQuery,
     useGetCoinSupplyQuery,
-    useGetCoinMarketQuery
+    useGetCoinMarketsQuery
 } = cryptoApi

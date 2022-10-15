@@ -1,4 +1,4 @@
-import { useGetCoinMarketQuery } from "../services/cryptoApi"
+import { useGetCoinExchangesQuery } from "../services/cryptoApi"
 import { useEffect,useState } from "react"
 
 interface Exchanges {
@@ -21,7 +21,7 @@ interface Exchanges {
 
 const Exchanges = () => {
 
-  const {data,isLoading,error} = useGetCoinMarketQuery(undefined,{})
+  const {data,isLoading,error} = useGetCoinExchangesQuery(undefined,{})
   const [exchanges,setExchanges] = useState([])
   useEffect(() => {
     setExchanges(data?.data?.markets)

@@ -1,6 +1,5 @@
 import { useState,useEffect } from "react"
-//for some reason markets and exchanges are swaped by places in the API i fetch data from,so little confusions in the  project are NOT MY fault
-import { useGetExchangesQuery } from "../services/cryptoApi"
+import { useGetCoinMarketsQuery } from "../services/cryptoApi"
 import CoinSupply from "./CoinSupply"
 
 const styles  = {
@@ -33,7 +32,7 @@ interface Stats {
 const Markets = () => {
   const [Markets,setMarkets] = useState<MarketsData[]>([])
   const [stats,setStats] = useState<Stats>()
-  const {data,isLoading,error} = useGetExchangesQuery(undefined,{})
+  const {data,isLoading,error} = useGetCoinMarketsQuery(undefined,{})
   useEffect(() => {
     setMarkets(data?.data?.exchanges)
     setStats(data?.data?.stats)
