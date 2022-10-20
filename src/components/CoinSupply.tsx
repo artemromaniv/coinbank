@@ -4,7 +4,7 @@ import StatsBanner from "./StatsBanner"
 
 const styles = {
   wrapper:'px-3',
-  banner_header:'text-3xl font-bold',
+  banner_header:'hidden md:inline text-3xl font-bold',
 }
 
 interface SupplyProps {

@@ -1,7 +1,7 @@
 const styles = {
-    banner_container:'mt-9 mb-9 grid grid-cols-2 gap-8 text-xl font-bold text-txt',
-    card_gradient:'flex flex-col gap-4 bg-gradient-to-br from-mauve to-peach p-3 rounded-2xl rounded-tl-lg',
-    card_row:'flex flex-col gap-4 bg-crust p-3 rounded-2xl rounded-tl-lg col-span-2 border-2 border-white',
+    banner_container:'mt-4 mb-4 xl:mt-9 xl:mb-9 grid grid-cols-2 gap-2 md:gap-8 text-xl font-bold text-txt',
+    card_gradient:'flex flex-col gap-2 md:gap-4 bg-gradient-to-br from-mauve to-peach p-3 rounded-2xl rounded-tl-lg',
+    card_row:'flex flex-col gap-2 md:gap-4 bg-crust p-3 rounded-2xl rounded-tl-lg col-span-2 border-2 border-white',
     text_gradient:'text-transparent bg-clip-text bg-gradient-to-r from-white to-light_pink'
 }
 

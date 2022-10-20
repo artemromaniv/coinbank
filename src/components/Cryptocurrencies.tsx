@@ -3,8 +3,8 @@ import {useState,useEffect} from 'react'
 import { useGetCryptoCurrencyQuery } from '../services/cryptoApi'
 import GlobalStats from './GlobalStats'
 const styles = {
-  wrapper:'w-full h-full flex flex-col-reverse lg:flex-row md:flex-col-reverse ',
-  table_container:'lg:basis-9/12 overflow-y-auto ',
+  wrapper:'w-full h-full flex flex-col-reverse lg:flex-row md:flex-col-reverse overflow-y-auto',
+  table_container:'basis-11/12  xl:basis-9/12 md:overflow-y-auto ',
   table_head:'flex flex-row',
   table_left_cols:'basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center',
   table_right_cols:'basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center',
@@ -12,7 +12,7 @@ const styles = {
   table_row:'flex flex-row w-full',
   coin_icon:'col-span-1 w-6 h-auto ',
   coin_icon_container:'bg-white flex w-8 h-8 rounded-full items-center justify-center overflow-hidden',
-  banner_container:'hidden lg:basis-3/12 lg:inline',
+  banner_container:'xl:basis-3/12',
   media_util:'hidden md:inline'
 }
 
