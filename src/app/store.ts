@@ -3,11 +3,11 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import { cryptoApi } from "../services/cryptoApi";
 
 export const store = configureStore({
-    reducer:{
+    reducer: {
         // Add the generated reducer as a specific top-level slice
-        [cryptoApi.reducerPath]:cryptoApi.reducer
+        [cryptoApi.reducerPath]: cryptoApi.reducer
     },
-    middleware:(getDefaultMiddleware) => 
+    middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(cryptoApi.middleware)
 })
 
