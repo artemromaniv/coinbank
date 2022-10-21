@@ -20,7 +20,7 @@ const  App = () => {
       </div>
       <div className={styles.main}>
         <Routes>
-          <Route path= '/cryptocurrencies' element = {<Cryptocurrencies/>} />
+          <Route path= '/' element = {<Cryptocurrencies/>} />
           <Route path= '/exchanges' element = {<Exchanges/>} />
           <Route path= '/markets' element = {<Markets/>} />
         </Routes>
