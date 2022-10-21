@@ -20,8 +20,8 @@ const App = () => {
       <div className={styles.main}>
         <Routes>
           <Route path="/" element={<Cryptocurrencies />} />
-          <Route path="/exchanges" element={<Exchanges />} />
-          <Route path="/markets" element={<Markets />} />
+          <Route path="exchanges" element={<Exchanges />} />
+          <Route path="markets" element={<Markets />} />
         </Routes>
       </div>
     </div>

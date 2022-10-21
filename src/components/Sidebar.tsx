@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
 import {
   IconArrowsExchange,
   Icon3dCubeSphere,
@@ -9,23 +8,23 @@ const styles = {
   logo_container: "absolute p-5",
   logo: "text-4xl",
   nav_container: "m-0 absolute top-1/2 -translate-y-1/2  ",
-  nav: "flex flex-col gap-14 bg-[#11111B] px-4 py-14 rounded-r-3xl",
+  nav_button: "flex flex-col gap-14 bg-[#11111B] px-2 py-8 rounded-r-3xl",
   nav_link: "flex p-2",
-  nav_link_active: "text-peach",
-  nav_link_inactive: "text-white",
+  nav_link_active: "bg-peach",
+  nav_link_inactive: "bg-none",
 };
 
 const links = [
   {
-    path: "/",
+    path: "",
     icon: <IconBuildingBank />,
   },
   {
-    path: "/exchanges",
+    path: "exchanges",
     icon: <IconArrowsExchange />,
   },
   {
-    path: "/markets",
+    path: "markets",
     icon: <Icon3dCubeSphere />,
   },
 ];
@@ -33,23 +32,13 @@ const links = [
 const Sidebar = () => {
   return (
     <div>
-      <div className={styles.logo_container}>
-        <Link to={"/"}>
-          <span className={styles.logo}>{/* logo will be here later */}</span>
-        </Link>
-      </div>
-
       <div className={styles.nav_container}>
-        <div className={styles.nav}>
+        <div className={styles.nav_button}>
           {links.map((link) => (
             <NavLink
-              to={`${link.path}`}
+              to={`/${link.path}`}
               key={link.path}
-              className={({ isActive }) =>
-                `${styles.nav_link} ${
-                  isActive ? styles.nav_link_active : styles.nav_link_inactive
-                }`
-              }
+              className={({ isActive }) =>`${styles.nav_link} ${isActive ? 'bg-peach' : 'bg-none'}`}
             >
               {link.icon}
             </NavLink>
