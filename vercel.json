@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/", "destination": "/" },
+    { "src": "/markets", "destination": "/" },
+    { "src": "/exchanges", "destination": "/" }
+  ]
+}
