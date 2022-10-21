@@ -71,7 +71,7 @@ const Cryptocurrencies = () => {
                     <li className={styles.table_right_cols} >
                       <span>{millify(coin.price)}</span>
                       <span className={styles.media_util} >{millify(coin.marketCap)}</span>
-                      <span className={coin.change < 0 ? 'text-red' : 'text-green'} >{coin.change}</span>
+                      <span className={coin.change < 0 ? 'text-red' : 'text-green'} > {coin.change > 0 ? '▲' : '▼' } {Math.abs(coin.change)}</span>
                     </li>
                   </ul>
                 </div>
