@@ -5,7 +5,8 @@ import Sidebar from "./components/Sidebar";
 import Exchanges from "./components/Exchanges";
 import Markets from "./components/Markets";
 import CoinDetails from "./components/CoinDetails";
-
+import { Chart,registerables } from "chart.js";
+Chart.register(...registerables)
 const styles = {
   App: "w-full h-screen bg-background flex flex-row overflow-hidden",
   siedbar_container: "lg:basis-1/12 hidden lg:flex",
