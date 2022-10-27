@@ -21,12 +21,15 @@ const CoinDetailsHeader = ({ name, iconUrl, symbol, price, change }: Props) => {
         <div className={styles.icon_container}>
           <img src={iconUrl} alt={symbol} className={styles.icon} />
         </div>
+        <div className="w-8"></div>
         <span>{name}</span>
+        <div className="w-8"></div>
         <span>{symbol}</span>
       </div>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center mr-8">
         <span>{millify(price)}</span>
-        <span>{change}</span>
+        <div className="w-8"></div>
+        <span className={change < 0 ? "text-red" : "text-green"} >{change > 0 ? "▲" : "▼"}{Math.abs(change)}</span>
       </div>
     </div>
   );
