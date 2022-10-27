@@ -2,11 +2,12 @@ import millify from "millify";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetCryptoDetailsQuery } from "../services/cryptoApi";
+import CoinDetailsHeader from "./UI/CoinDetailsHeader";
 import CoinStats from "./UI/CoinStats";
 import PriceHistory from "./UI/PriceHistory";
 
 const styles = {
-  wrapper: " h-screen w-full",
+  wrapper: " h-screen w-full ",
   grid_container: "flex flex-col",
 };
 interface CoinProps {
@@ -22,6 +23,11 @@ interface CoinProps {
     max: number;
     total: number;
   };
+  iconUrl: string;
+  name: string;
+  symbol: string;
+  price: number;
+  change: number;
 }
 
 const CoinDetails = () => {
@@ -44,6 +50,13 @@ const CoinDetails = () => {
         </div>
       ) : (
         <div className={styles.wrapper}>
+          <CoinDetailsHeader
+            iconUrl={coinDetails?.iconUrl}
+            name={coinDetails?.name}
+            symbol={coinDetails?.symbol}
+            price={coinDetails?.price}
+            change={coinDetails?.change}
+          />
           <div className={styles.grid_container}>
             <CoinStats
               heading_1="Market Cap"

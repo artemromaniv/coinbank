@@ -1,5 +1,5 @@
 const styles = {
-  wrapper: "grid grid-cols-3",
+  wrapper: "grid grid-cols-2 md:grid-cols-3",
   card: "flex flex-col",
 };
 
