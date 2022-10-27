@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useGetCoinSupplyQuery } from "../services/cryptoApi";
-import StatsBanner from "./StatsBanner";
+import StatsBanner from "./UI/StatsBanner";
 
 const styles = {
   wrapper: "px-3",

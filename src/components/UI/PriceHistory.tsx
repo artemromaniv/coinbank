@@ -4,7 +4,7 @@ interface Props {
 }
 
 const styles = {
-  wrapper: "p-2 rounded-2xl border-white bg-peach",
+  wrapper: "p-2 rounded-2xl border-white",
 };
 
 const PriceHistory = ({ sparkLine }: Props) => {

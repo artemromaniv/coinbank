@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGetGlobalStatsQuery } from "../services/cryptoApi";
-import StatsBanner from "./StatsBanner";
+import StatsBanner from "./UI/StatsBanner";
 
 interface StatsType {
   totalCoins: number;

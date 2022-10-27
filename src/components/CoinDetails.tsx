@@ -1,14 +1,27 @@
+import millify from "millify";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetCryptoDetailsQuery } from "../services/cryptoApi";
-import PriceHistory from "./PriceHistory";
+import CoinStats from "./UI/CoinStats";
+import PriceHistory from "./UI/PriceHistory";
 
 const styles = {
-  wrapper: " h-screen w-full p- ",
-  grid_container: "grid grid-cols-3 grid-rows-2 bg-peach",
+  wrapper: " h-screen w-full",
+  grid_container: "flex flex-col",
 };
 interface CoinProps {
   sparkline: number[];
+  marketCap: number;
+  numberOfMarkets: number;
+  numberOfExchanges: number;
+  allTimeHigh: {
+    price: number;
+    timestamp: number;
+  };
+  supply: {
+    max: number;
+    total: number;
+  };
 }
 
 const CoinDetails = () => {
@@ -32,9 +45,20 @@ const CoinDetails = () => {
       ) : (
         <div className={styles.wrapper}>
           <div className={styles.grid_container}>
-            <span>BTC</span>
-            <span>BTC</span>
-            <span>BTC</span>
+            <CoinStats
+              heading_1="Market Cap"
+              content_1={coinDetails?.marketCap}
+              heading_2="Markets"
+              content_2={coinDetails?.numberOfMarkets}
+              heading_3="Max supply"
+              content_3={coinDetails?.supply.max ?? "unconfirmed"}
+              heading_4="exchanges"
+              content_4={coinDetails?.numberOfExchanges}
+              heading_5="peak price"
+              content_5={millify(coinDetails?.allTimeHigh.price)}
+              heading_6="Circulating amount"
+              content_6={coinDetails?.supply.total ?? "unconfirmed"}
+            />
             <PriceHistory sparkLine={coinDetails?.sparkline} />
           </div>
         </div>
