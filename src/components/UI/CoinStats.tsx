@@ -1,6 +1,6 @@
 const styles = {
-  wrapper: "grid grid-cols-2 md:grid-cols-3",
-  card: "flex flex-col",
+  wrapper: "my-8  grid grid-cols-2 md:grid-cols-3  gap-y-8",
+  card: "flex flex-col gap-1 md:gap-2 bg-crust p-3 rounded-2xl rounded-tl-lg mr-8 ",
 };
 
 interface Props {

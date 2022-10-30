@@ -7,7 +7,7 @@ import CoinStats from "./UI/CoinStats";
 import PriceHistory from "./UI/PriceHistory";
 
 const styles = {
-  wrapper: " h-screen w-full ",
+  wrapper: " h-screen w-full",
   grid_container: "flex flex-col",
 };
 interface CoinProps {
