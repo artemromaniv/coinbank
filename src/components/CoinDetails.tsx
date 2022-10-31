@@ -69,6 +69,7 @@ const CoinDetails = () => {
               content_4={coinDetails?.numberOfExchanges}
               heading_5="peak price"
               content_5={millify(coinDetails?.allTimeHigh.price)}
+              peak_price_date = {coinDetails?.allTimeHigh?.timestamp}
               heading_6="Circulating amount"
               content_6={coinDetails?.supply.total ?? "unconfirmed"}
             />

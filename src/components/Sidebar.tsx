@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import {
   IconArrowsExchange,
   Icon3dCubeSphere,
@@ -14,35 +15,29 @@ const styles = {
   nav_link_inactive: "text-none",
 };
 
-const links = [
-  {
-    path: "",
-    icon: <IconBuildingBank />,
-  },
-  {
-    path: "exchanges",
-    icon: <IconArrowsExchange />,
-  },
-  {
-    path: "markets",
-    icon: <Icon3dCubeSphere />,
-  },
-];
-
 const Sidebar = () => {
   return (
     <div>
       <div className={styles.nav_container}>
         <div className={styles.nav_button}>
-          {links.map((link) => (
             <NavLink
-              to={`/${link.path}`}
-              key={link.path}
-              className={({ isActive }) =>`${styles.nav_link} ${isActive ? 'text-peach' : 'bg-none'}`}
+              to={''}
+              className={({ isActive }) =>`${styles.nav_link} ${isActive ? 'bg-peach' : 'bg-none'}`}
             >
-              {link.icon}
+              <IconBuildingBank />
             </NavLink>
-          ))}
+            <NavLink
+              to={'/exchanges'}
+              className={({ isActive }) =>`${styles.nav_link} ${isActive ? 'bg-peach' : 'bg-none'}`}
+            >
+              <IconArrowsExchange />
+            </NavLink>
+            <NavLink
+              to={'/markets'}
+              className={({ isActive }) =>`${styles.nav_link} ${isActive ? 'bg-peach' : 'bg-none'}`}
+            >
+              <Icon3dCubeSphere />
+            </NavLink>
         </div>
       </div>
     </div>

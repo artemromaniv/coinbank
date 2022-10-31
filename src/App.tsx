@@ -22,9 +22,9 @@ const App = () => {
       <div className={styles.main}>
         <Routes>
           <Route path="/" element={<Cryptocurrencies />} />
-          <Route path="exchanges" element={<Exchanges />} />
-          <Route path="markets" element={<Markets />} />
-          <Route path = 'crypto/:coin_uuid' element = {<CoinDetails/>} />
+          <Route path="/exchanges" element={<Exchanges />} />
+          <Route path="/markets" element={<Markets />} />
+          <Route path = '/crypto/:coin_uuid' element = {<CoinDetails/>} />
         </Routes>
       </div>
     </div>
