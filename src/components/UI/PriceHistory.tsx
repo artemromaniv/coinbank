@@ -1,4 +1,4 @@
-import { Line } from "react-chartjs-2";
+// import { Line } from "react-chartjs-2";
 interface Props {
   sparkLine: number[];
 }
@@ -28,7 +28,7 @@ const PriceHistory = ({ sparkLine }: Props) => {
   console.log(data.datasets[0].data)
   return (
     <div className={styles.wrapper}>
-      <Line options={options} data={data} height={"90%"} />
+      {/* <Line options={options} data={data} height={"90%"} /> */}
       
     </div>
   );

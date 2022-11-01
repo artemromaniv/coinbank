@@ -73,7 +73,7 @@ const CoinDetails = () => {
               heading_6="Circulating amount"
               content_6={coinDetails?.supply.total ?? "unconfirmed"}
             />
-            <PriceHistory sparkLine={coinDetails?.sparkline} />
+            {/* <PriceHistory sparkLine={coinDetails?.sparkline} /> */}
           </div>
         </div>
       )}
