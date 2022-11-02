@@ -10,7 +10,7 @@ Chart.register(...registerables)
 const styles = {
   App: "w-full h-screen bg-background flex flex-row overflow-hidden",
   siedbar_container: "hidden lg:flex",
-  main: "w-full lg:pt-20 px-24",
+  main: "w-full lg:pt-20 xl:px-24",
 };
 
 const App = () => {

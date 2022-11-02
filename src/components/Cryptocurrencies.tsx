@@ -8,7 +8,7 @@ const styles = {
   table_container: "md:overflow-y-auto ",
   table_head: "flex flex-row",
   table_left_cols:
-    "basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center",
+    "basis-1/2 inline-grid grid-cols-3 md:grid-cols-3 items-center",
   table_right_cols:
     "basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center",
   table_body: "hover:bg-crust border-b-2 border-b-crust p-2 py-3",
@@ -56,7 +56,6 @@ const Cryptocurrencies = () => {
               <ul className={styles.table_head}>
                 <li className={styles.table_left_cols}>
                   <span>#</span>
-                  <span> </span>
                   <span className={styles.media_util}>Name</span>
                   <span>{""}</span>
                 </li>
@@ -73,15 +72,20 @@ const Cryptocurrencies = () => {
                   <ul className={styles.table_row}>
                     <li className={styles.table_left_cols}>
                       <span>{coin.rank}.</span>
-                      <div className={styles.coin_icon_container}>
-                        <img
-                          src={coin.iconUrl}
-                          alt={coin.symbol}
-                          className={styles.coin_icon}
-                        />
+                      <div className="grid grid-cols-4 gap-6">
+                        <div className={styles.coin_icon_container}>
+                          <img
+                            src={coin.iconUrl}
+                            alt={coin.symbol}
+                            className={styles.coin_icon}
+                          />
+                        </div>
+                        <span className={`${styles.media_util} inline-block`}>
+                          {coin.name}
+                        </span>
+                        <div>{""}</div>
+                        <span>{coin.symbol}</span>
                       </div>
-                      <span className={styles.media_util}>{coin.name}</span>
-                      <span>{coin.symbol}</span>
                     </li>
                     <li className={styles.table_right_cols}>
                       <span>{millify(coin.price)}</span>

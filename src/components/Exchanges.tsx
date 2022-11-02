@@ -8,7 +8,7 @@ const styles = {
   table_head: "flex flex-row",
   table_left_cols:"basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center",
   table_right_cols:"basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center",
-  table_body: "hover:bg-crust border-b-2 border-b-crust p-2 py-3",
+  table_body: "border-b-2 border-b-crust p-2 py-3",
   table_row: "flex flex-row w-full",
   coin_icon: "col-span-1 w-6 h-auto ",
   coin_icon_container:"bg-white flex w-8 h-8 rounded-full items-center justify-center overflow-hidden",
