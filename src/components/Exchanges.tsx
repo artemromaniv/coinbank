@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import millify from "millify";
 
 const styles = {
-  wrapper:"w-full h-full flex flex-col-reverse lg:flex-row md:flex-col-reverse ",
-  table_container: "xl:basis-9/12 overflow-y-auto ",
+  wrapper:"w-full h-full flex flex-col",
+  table_container: "overflow-y-auto ",
   table_head: "flex flex-row",
   table_left_cols:"basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center",
   table_right_cols:"basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center",
@@ -91,7 +91,6 @@ const Exchanges = () => {
               </div>
             ))}
           </div>
-          <div className={styles.banner_container}></div>
         </div>
       )}
     </>

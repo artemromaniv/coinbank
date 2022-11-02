@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useGetCoinMarketsQuery } from "../services/cryptoApi";
-import CoinSupply from "./CoinSupply";
 
 const styles = {
-  wrapper:"w-full h-full flex flex-col-reverse xl:flex-row md:flex-col-reverse overflow-y-auto",
-  table_container: "xl:basis-9/12 xl:overflow-y-auto",
+  wrapper:"w-full h-full flex flex-col",
+  table_container: "xl:overflow-y-auto",
   table_head: "flex flex-row",
   table_left_cols:"basis-1/2 inline-grid grid-cols-3 md:grid-cols-4 items-center",
   table_right_cols:"basis-1/2 inline-grid grid-cols-2 md:grid-cols-3 items-center",
@@ -86,9 +85,6 @@ const Markets = () => {
                 </ul>
               </div>
             ))}
-          </div>
-          <div className={styles.banner_container}>
-            <CoinSupply totalBTCMarkets={stats?.total} />
           </div>
         </div>
       )}

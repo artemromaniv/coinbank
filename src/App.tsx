@@ -9,8 +9,8 @@ import { Chart,registerables } from "chart.js";
 Chart.register(...registerables)
 const styles = {
   App: "w-full h-screen bg-background flex flex-row overflow-hidden",
-  siedbar_container: "lg:basis-1/12 hidden lg:flex",
-  main: "lg:basis-11/12 w-full lg:pt-20",
+  siedbar_container: "hidden lg:flex",
+  main: "w-full lg:pt-20 px-24",
 };
 
 const App = () => {

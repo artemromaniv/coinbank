@@ -35,9 +35,6 @@ export const cryptoApi = createApi({
         getGlobalStats: builder.query({
             query: () => createRequest(`/stats`)
         }),
-        getCoinSupply: builder.query({
-            query: () => createRequest(`/coin/Qwsogvtv82FCd/supply`)
-        }),
         getCoinExchanges: builder.query({
             query: () => createRequest(`coin/Qwsogvtv82FCd/markets`)
         })
@@ -50,6 +47,5 @@ export const {
     useGetCryptoHistoryQuery,
     useGetCoinExchangesQuery,
     useGetGlobalStatsQuery,
-    useGetCoinSupplyQuery,
     useGetCoinMarketsQuery
 } = cryptoApi
